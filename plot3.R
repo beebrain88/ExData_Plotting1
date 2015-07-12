@@ -1,8 +1,8 @@
 data<- read.csv("household_power_consumption.txt", sep= ";", stringsAsFactors= FALSE)  #load in data
 febdata<-data.frame(data[66637:69516, ], stringsAsFactors= FALSE)						#segment data to just contain desired dates
-Sub_metering_1<-as.numeric(febdata$Sub_metering_1)									#create submetering 1 variable
-Sub_metering_2<-as.numeric(febdata$Sub_metering_2)									#create submetering 2 variable
-Sub_metering_3<- as.numeric(febdata$Sub_metering_3)									#create submetering 3 variable
+Sub_metering_1<-as.numeric(febdata$Sub_metering_1)									#create submetering 1 as a numeric variable
+Sub_metering_2<-as.numeric(febdata$Sub_metering_2)									#create submetering 2 as a numeric variable
+Sub_metering_3<- as.numeric(febdata$Sub_metering_3)									#create submetering 3 as a numeric variable
 date_time<- paste(as.Date(febdata$Date, "%d/%m/%Y"), febdata$Time)		#pastes date and time together to get formated
 datetime<-strptime(date_time, format = "%Y-%m-%d %H:%M:%S")				#formats date and time together using strptime
 
